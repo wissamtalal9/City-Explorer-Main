@@ -1,34 +1,27 @@
-import React, { Component } from 'react'
-import './first.css'
+import React, { Component } from 'react';
+
+import { Card } from 'react-bootstrap';
+import style from "./style.css"
 
 
-export class Location extends Component {
+class Location extends Component {
     render() {
         return (
-            <div>            
+            <div>
+                <Card style={{ width: '25rem' }}>
+                <Card.Img variant="top" src={this.props.map} alt={this.props.display_name} width="800" height="400" />
+                    <Card.Body>
+                        <Card.Title>{this.props.display_name}</Card.Title>
+                        
+                        <div class="this">
+                        Lat,Long:{this.props.lat},{this.props.lon}
+                        </div>
+                        
+                    </Card.Body>
+                </Card>
+                
+                
 
-      <table class="table table-dark table-striped">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">city name</th>
-      <th scope="col">longitude</th>
-      <th scope="col">latitude</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{this.props.city_name}</td>
-      <td>{this.props.lat}</td>
-      <td>{this.props.lon}</td>
-    </tr>
-   
-  </tbody>
-</table>
-<div className="ratio ratio-16x9 div_iframe">
-      <iframe src={this.props.map}  title="country map" allowfullscreen className={this.props.iframe}></iframe>
-    </div>
             </div>
         )
     }
