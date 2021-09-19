@@ -12,5 +12,4 @@ class AlertMsg extends Component {
         )
     }
 }
-
 export default AlertMsg
